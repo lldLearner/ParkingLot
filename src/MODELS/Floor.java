@@ -46,17 +46,22 @@ public class Floor {
 		return floorId;
 	}
 	
-	public boolean park(Vehicle vehicle) {
+	public Spot park(Vehicle vehicle) {
 		// TODO Auto-generated method stub
 		for(Spot spot : spots) {
 			if(!spot.isOccupied() && spot.canFit(vehicle)) {
 				spot.occupySpot();
 				availableSpots.put(spot.getType(),  availableSpots.get(spot.getType()) - 1);
 				updateDisplayBoard();
-				return true;
+				return spot;
 			}
 		}
 		
-		return false;
+		return null;
+	}
+	
+	public void unPark(Spot spot) {
+		this.availableSpots.put(spot.getType(),  availableSpots.get(spot.getType()) + 1);
+		updateDisplayBoard();
 	}
 }

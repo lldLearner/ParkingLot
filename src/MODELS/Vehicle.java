@@ -5,7 +5,7 @@ public class Vehicle {
 	private String licensePlate;
 	private VehicleType type;
 	private VehicleSize size;
-	
+
 	public Vehicle(String licensePlate, VehicleType type, VehicleSize size) {
 		// TODO Auto-generated constructor stub
 		this.licensePlate = licensePlate;

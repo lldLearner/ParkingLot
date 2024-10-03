@@ -11,17 +11,8 @@ public class EntryGate {
 	
 	public Ticket handleParkingRequest(Vehicle vehicle, ParkingLot parkingLot) {
 		// TODO Auto-generated method stub
-		if(!parkingLot.park(vehicle)) {
-			return null;
-		}
-		
-		return getTicket(vehicle);
-	}
-
-	private Ticket getTicket(Vehicle vehicle) {
-		// TODO Auto-generated method stub
-		String ticketNumber = "TICKET - " + vehicle.getLicensePlate();
-		return new Ticket(ticketNumber, vehicle);
+		Ticket ticket = parkingLot.park(vehicle);
+		return ticket;
 	}
 
 	public String getGateNum() {
